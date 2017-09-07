@@ -46,5 +46,9 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "really-need": "^1.9.2",
+    "supertest": "^3.0.0"
   }
 }

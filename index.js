@@ -1,3 +1,7 @@
 'use strict'
 
-const express = require('express')
+/** 
+*	Ponto inicial da app
+*/
+
+require('./modules/server')()
