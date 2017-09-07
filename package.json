@@ -1,0 +1,44 @@
+{
+  "name": "smartie-loteca",
+  "version": "1.0.0",
+  "description": "Simulador e Classificados de jogos da loteria",
+  "keywords": [
+    "loteria",
+    "mastertech",
+    "backend",
+    "loteca"
+  ],
+  "homepage": "https://github.com/fabiopagoti/smartie-loteca#readme",
+  "bugs": {
+    "url": "https://github.com/fabiopagoti/smartie-loteca/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "install": "echo Obrigado por desenvolver a smartie-loteca conosco!",
+    "start": "pm2-dev index.js",
+    "test": "mocha"
+  },
+  "config": {
+    "dev": {
+      "port": 3000
+    },
+    "prod": {
+      "port": 80
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabiopagoti/smartie-loteca.git"
+  },
+  "author": "Amanda Protasio",
+  "contributors": [{
+    "name": "Amanda Protasio",
+    "email": "amanda.protasio@gmail.com",
+    "url": "https://www.linkedin.com/in/amandaprotasio/"
+  }, {
+    "name": "Fábio Pagoti",
+    "email": "fabiopagoti@gmail.com",
+    "url": "https://www.linkedin.com/in/fabiopagoti/"
+  }],
+  "license": "MIT"
+}
