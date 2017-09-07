@@ -31,14 +31,20 @@
     "url": "git+https://github.com/fabiopagoti/smartie-loteca.git"
   },
   "author": "Amanda Protasio",
-  "contributors": [{
-    "name": "Amanda Protasio",
-    "email": "amanda.protasio@gmail.com",
-    "url": "https://www.linkedin.com/in/amandaprotasio/"
-  }, {
-    "name": "Fábio Pagoti",
-    "email": "fabiopagoti@gmail.com",
-    "url": "https://www.linkedin.com/in/fabiopagoti/"
-  }],
-  "license": "MIT"
+  "contributors": [
+    {
+      "name": "Amanda Protasio",
+      "email": "amanda.protasio@gmail.com",
+      "url": "https://www.linkedin.com/in/amandaprotasio/"
+    },
+    {
+      "name": "Fábio Pagoti",
+      "email": "fabiopagoti@gmail.com",
+      "url": "https://www.linkedin.com/in/fabiopagoti/"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
 }
