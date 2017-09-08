@@ -1,0 +1,13 @@
+.numero {
+    /*width: 4em;*/
+    border-radius: 100% !important;
+    /*height: 4em;*/
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+
+
+.numero-texto{
+	font-size: 1.5em;
+}
