@@ -2,31 +2,55 @@
 	<h1>Termômetro</h1>
 	<br>
 
-<p class="termometro-subtitulo">Selecione 15 números: </p>
 
-<form class="form-check form-check-inline" method="post">
 
-<div class="card card-block fundo-numeros">
+	<div class="row">
+		<div class="col-sm-6">
 
-		{{#each numeros}}
-		<div class="d-flex flex-row justify-content-between align-items-center flex-wrap"> <!-- p-2 -->
+			<!--  -->
 
-			{{#each no}}
-			<div class="btn-group numeros-space" data-toggle="buttons">
-				<label class="btn btn-outline-primary numero" >
-					<div class="numero-texto">
-						<input type="checkbox" enabled>{{this}}
+			<p class="termometro-subtitulo">Selecione 15 números: </p>
+
+			<form class="form-check form-check-inline" method="post">
+
+				<div class="card card-block fundo-numeros">
+
+					{{#each numeros}}
+					<div class="d-flex flex-row justify-content-between align-items-center flex-wrap"> <!-- p-2 -->
+
+						{{#each no}}
+						<div class="btn-group numeros-space" data-toggle="buttons">
+							<label class="btn btn-outline-primary numero" >
+								<div class="numero-texto">
+									<input type="checkbox" enabled>{{this}}
+								</div>
+							</label>
+						</div>
+						{{/each}}
 					</div>
-				</label>
-			</div>
-			{{/each}}
+					{{/each}}
+
+				</div>
+				<br>
+				<button type="button" class="btn btn-primary btn-lg btn-block">Analisar combinação!</button>
+
+			</form>
+
+			<!--  -->
+
+
 		</div>
-		{{/each}}
-
-</div>
-
-</form>
 
 
-</div>
+		<div class="col-sm-6">
+
+			<p class="termometro-subtitulo">Resultado da Análise: </p>
+
+
+		</div>
+	</div>
+
+
+
+
 </div>
