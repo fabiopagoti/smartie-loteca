@@ -4,10 +4,15 @@
 
 <p class="termometro-subtitulo">Selecione 15 números: </p>
 
+<form class="form-check form-check-inline" method="post">
+
+<div class="card card-block fundo-numeros">
+
 		{{#each numeros}}
-		<div class="d-flex p-2 flex-row justify-content-between align-items-center flex-wrap">
+		<div class="d-flex flex-row justify-content-between align-items-center flex-wrap"> <!-- p-2 -->
+
 			{{#each no}}
-			<div class="btn-group" data-toggle="buttons">
+			<div class="btn-group numeros-space" data-toggle="buttons">
 				<label class="btn btn-outline-primary numero" >
 					<div class="numero-texto">
 						<input type="checkbox" enabled>{{this}}
@@ -17,6 +22,11 @@
 			{{/each}}
 		</div>
 		{{/each}}
+
+</div>
+
+</form>
+
 
 </div>
 </div>
