@@ -1,27 +1,44 @@
+/*@see https://v4-alpha.getbootstrap.com/getting-started/introduction/*/
+.selector-for-some-widget {
+-webkit-box-sizing: content-box;
+-moz-box-sizing: content-box;
+box-sizing: content-box;
+}
+
+p {
+line-height: 200%;
+}
+
 .numero {
-    width: 4em;
-    border-radius: 100% !important;
-    height: 4em;
-    text-align: center;
-    display: grid;
-    align-items: center;
+width: 4em;
+height: 4em;
+text-align: center;
+display: grid;
+align-items: center;
 }
 
-
-.numero-texto{
-	font-size: 1.5em;
+.footer {
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 60px;
+line-height: 60px;
 }
 
-.termometro-subtitulo{
-  font-size: 1.5em;
+.numero-texto {
+font-size: 1.5em;
 }
 
-.fundo-numeros{
-  border-radius: 1%;
-  border-color: #EDEDED;
-  background-color: #EDEDED;
+.termometro-subtitulo {
+font-size: 1.5em;
 }
 
-.numeros-space{
-  padding: 0.7rem;
+.fundo-numeros {
+border-radius: 1%;
+border-color: #EDEDED;
+background-color: #EDEDED;
+}
+
+.numeros-space {
+padding: 0.7rem;
 }
