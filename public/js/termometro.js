@@ -1,10 +1,10 @@
 function verificaAposta() {
 	let aInputs = document.querySelectorAll('.input-numero')
-	let aNumeros = []
+	let aNumerosSelecionados = []
 
 	for (numero of aInputs) {
 		if (numero.checked) {
-			aNumeros.push(parseInt(numero.getAttribute('data-bola')))
+			aNumerosSelecionados.push(parseInt(numero.getAttribute('data-bola')))
 		}
 	}
 
@@ -14,7 +14,7 @@ function verificaAposta() {
 			type: 'POST',
 			contentType: 'application/json',
 			// dataType: 'json',
-			data: JSON.stringify(aNumeros),
+			data: JSON.stringify(aNumerosSelecionados),
 		})
 		.done(function(a,b,c) {
 			window.location = a;

@@ -66,7 +66,7 @@ const defineRouter = (app) => {
 			assert.ok(oQuery.frequencia)
 			response.render('resultado', oQuery)
 		} catch (e) {
-			response.redirect('termometro', {
+			response.redirect('/termometro', {
 				termometro: true
 			})
 		}
