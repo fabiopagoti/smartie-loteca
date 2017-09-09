@@ -14,7 +14,7 @@ line-height: 200%;
 }
 
 .dropdown-item:focus,
-.dropdown-item:hover {
+.dropdown-item: {
 color: #fff;
 text-decoration: none;
 background-color: #13B955;
@@ -32,6 +32,14 @@ height: 4em;
 text-align: center;
 align-items: center;
 display: grid;
+}
+
+.label-numero:hover {
+background-color: purple
+}
+
+.label-numero:active {
+background-color: inherit;
 }
 
 .numero-texto {
