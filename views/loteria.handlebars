@@ -1,0 +1,135 @@
+<section>
+	<section class="row text-justify placeholders">
+		<div class="container">
+			<h1 class="my-4">{{nome}}</h1>
+			<h2 class="my-4">Informações Gerais</h2>
+			<table class="table table-responsive">
+				<tbody>
+					<tr>
+						<th scope="row">Valor Aposta</th>
+						<td>{{valorAposta}}</td>
+					</tr>
+					<tr>
+						<th scope="row">Datas dos Sorteios</th>
+						<td>{{datasSorteios}}</td>
+					</tr>
+					<tr>
+						<th scope="row">Números disponíveis</th>
+						<td>{{aposta.numerosDisponiveis}}</td>
+					</tr>
+					<tr>
+						<th scope="row">Números por aposta</th>
+						<td>{{aposta.numerosAposta}}</td>
+					</tr>
+					<tr>
+						<th scope="row">Premiado com</th>
+						<td>{{aposta.numerosGanhadores}} números ou mais</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+	<section class="row text-justify" >
+		<div class="container">
+			<h2 class="my-4">Resultados</h2>
+			<div id="accordion" role="tablist">
+				<div class="card">
+					<div class="card-header" role="tab" id="headingOne">
+						<h5 class="mb-0">
+							<a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								Na ordem do sorteio
+							</a>
+						</h5>
+					</div>
+					<div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+						<div class="card-body">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>Concurso</th>
+										<th>Data</th>
+										{{#times 15}}
+										<th class="text-nowrap">#{{this}}</th>
+										{{/times}}
+									</tr>
+								</thead>
+								<tbody>
+									{{#each resultados}}
+									<tr>
+										<th scope="row">{{concurso}}</th>
+										<td>{{dataConcurso}}</td>
+										<td>{{bola1}}</td>
+										<td>{{bola2}}</td>
+										<td>{{bola3}}</td>
+										<td>{{bola4}}</td>
+										<td>{{bola5}}</td>
+										<td>{{bola6}}</td>
+										<td>{{bola7}}</td>
+										<td>{{bola8}}</td>
+										<td>{{bola9}}</td>
+										<td>{{bola10}}</td>
+										<td>{{bola11}}</td>
+										<td>{{bola12}}</td>
+										<td>{{bola13}}</td>
+										<td>{{bola14}}</td>
+										<td>{{bola15}}</td>
+									</tr>
+									{{/each}}
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header" role="tab" id="headingTwo">
+						<h5 class="mb-0">
+							<a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								Ordenado
+							</a>
+						</h5>
+					</div>
+					<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+						<div class="card-body">
+							<div class="card-body">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th>Concurso</th>
+											<th>Data</th>
+											{{#times 15}}
+											<th class="text-nowrap">#{{this}}</th>
+											{{/times}}
+										</tr>
+									</thead>
+									<tbody>
+										{{#each resultados}}
+										<tr>
+											<th scope="row">{{concurso}}</th>
+											<td>{{dataConcurso}}</td>
+											<td>{{bola1}}</td>
+											<td>{{bola2}}</td>
+											<td>{{bola3}}</td>
+											<td>{{bola4}}</td>
+											<td>{{bola5}}</td>
+											<td>{{bola6}}</td>
+											<td>{{bola7}}</td>
+											<td>{{bola8}}</td>
+											<td>{{bola9}}</td>
+											<td>{{bola10}}</td>
+											<td>{{bola11}}</td>
+											<td>{{bola12}}</td>
+											<td>{{bola13}}</td>
+											<td>{{bola14}}</td>
+											<td>{{bola15}}</td>
+										</tr>
+										{{/each}}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</section>

@@ -1,0 +1,10 @@
+{
+	"nome": "Mega Sena",
+	"valorAposta": "3.50",
+	"datasSorteios": [2,4,6],
+	"aposta": {
+		"numerosDisponiveis": 60,
+		"numerosAposta": 6,
+		"numerosGanhadores": 4
+	}
+}

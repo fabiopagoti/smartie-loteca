@@ -1,4 +1,6 @@
-'use strict'
+/*************************
+*	Middlewares
+**************************/
 
 const express = require('express')
 

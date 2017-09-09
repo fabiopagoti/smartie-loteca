@@ -1,39 +1,20 @@
-'use strict'
-
-/** 
- * 	Servidor express
- */
+/*************************
+*	Servidor express
+**************************/
 
 // Dependencias
 const express = require('express')
-const handlebars = require('express-handlebars')
 
+const configuration = require('./configuration')
 const middlewares = require('./middlewares')
 const router = require('./router')
-
-
 
 const app = express()
 
 const createServer = () => {
 
-	/*************************
-		Configuracoes gerais
-	**************************/
-
-	// Configuracao do Template Engine Handlebars
-
-	app.engine('handlebars', handlebars({
-		defaultLayout: 'main'
-	}))
-	app.set('view engine', 'handlebars')
-
-	// Configuracao das rotas case sensitive
-
-	app.enable('case sensitive routing')
-
-	// Diretorio com as visoes
-	// app.set('view', process.cwd() + '/views') 
+	// Configuracoes Gerais
+	configuration(app)
 
 	// Middlewares
 	middlewares(app)

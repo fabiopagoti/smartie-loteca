@@ -5,6 +5,10 @@
 box-sizing: content-box;
 }
 
+h1 {
+line-height: 0.7em;
+}
+
 p {
 line-height: 200%;
 }
