@@ -47,8 +47,7 @@ const defineRouter = (app) => {
 				pathname: '/resultado',
 				query: oResult
 			})
-			response
-			.redirect(sUrl)
+			response.send(sUrl)
 		}catch(e){
 			response
 			.status(400)
