@@ -19,15 +19,15 @@ const _frequenciaImpar = {
 	13: 0
 }
 
-const parImpar = (oBet) => {
+const parImpar = (aNumeros) => {
 	let oResult = {
 		pares: 0,
 		impares: 0,
 		frequencia: 0
 	}
 
-	oResult.pares = even(oBet).length
-	oResult.impares = odd(oBet).length
+	oResult.pares = even(aNumeros).length
+	oResult.impares = odd(aNumeros).length
 
 	if (oResult.pares + oResult.impares === 15) {
 		oResult.frequencia = (_frequenciaImpar[oResult.impares] / 1556 * 100).toFixed(2)
