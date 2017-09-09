@@ -1,6 +1,6 @@
 /*************************
- *	Rotas da Aplicacao
- **************************/
+*	Rotas da Aplicacao
+**************************/
 
 const lotofacil = require('./data/lotofacil.json')
 const megasena = require('./data/megasena.json')
@@ -55,20 +55,19 @@ const defineRouter = (app) => {
 			response.send(sUrl)
 		} catch (e) {
 			response
-				.status(400)
-				.send(e.message)
+			.status(400)
+			.send(e.message)
 		}
 	})
 
 	app.get('/resultado', (request, response) => {
+		console.log(request.query)
 		let oQuery = request.query
-		try {
-			assert.ok(oQuery.frequencia)
+		if (oQuery.frequencia) {
+
 			response.render('resultado', oQuery)
-		} catch (e) {
-			response.redirect('/termometro', {
-				termometro: true
-			})
+		} else {
+			response.redirect('termometro')
 		}
 	})
 
@@ -77,24 +76,24 @@ const defineRouter = (app) => {
 		let sLoteria = request.params.loteria
 		switch (sLoteria) {
 			case "lotofacil":
-				response.render('loteria', {
-					estatisticas: true,
-					loteria: lotofacil
-				})
-				break
+			response.render('loteria', {
+				estatisticas: true,
+				loteria: lotofacil
+			})
+			break
 
 			case "megasena":
-				response.render('loteria', {
-					estatisticas: true,
-					loteria: megasena
-				})
-				break
+			response.render('loteria', {
+				estatisticas: true,
+				loteria: megasena
+			})
+			break
 
 			default:
-				response.render('estatisticas', {
-					estatisticas: true
-				})
-				break
+			response.render('estatisticas', {
+				estatisticas: true
+			})
+			break
 		}
 	})
 
