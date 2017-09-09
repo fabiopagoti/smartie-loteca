@@ -4,6 +4,7 @@
 
 const express = require('express')
 const handlebars = require('express-handlebars')
+const helpers = require('./helpers')
 
 let _app
 
@@ -24,21 +25,14 @@ const _setRouting = () => {
 	_app.enable('case sensitive routing')
 	
 }
+
 /**
 * Configuracao do Template Engine Handlebars
 */
 const _setHandlebars = () => {
 	_app.engine('handlebars', handlebars({
 		defaultLayout: 'main',
-		helpers: {
-			times: function(n, block) {
-				var accum = '';
-				for(var i = 1; i <= n; i++){
-					accum += block.fn(i);
-				}
-				return accum;
-			}
-		}
+		helpers: helpers
 	}))
 	_app.set('view engine', 'handlebars')	
 
@@ -46,8 +40,5 @@ const _setHandlebars = () => {
 	// Diretorio com as visoes
 	// _app.set('view', process.cwd() + '/views') 
 }
-
-
-
 
 module.exports = setConfiguration
