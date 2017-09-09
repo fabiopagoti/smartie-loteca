@@ -45,8 +45,11 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "even": "^0.1.1",
     "express": "^4.15.4",
     "express-handlebars": "^3.0.0",
+    "odd": "^0.1.0",
     "popper.js": "^1.11.0"
   },
   "devDependencies": {
