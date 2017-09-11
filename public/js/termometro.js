@@ -1,10 +1,14 @@
 function verificaAposta() {
-	let aInputs = document.querySelectorAll('.input-numero')
+	let aNumeros = document.querySelectorAll('.numero-area')
 	let aNumerosSelecionados = []
+	let bSelecionado
+	let iNumero
 
-	for (numero of aInputs) {
-		if (numero.checked) {
-			aNumerosSelecionados.push(parseInt(numero.getAttribute('data-bola')))
+	for (oNumero of aNumeros) {
+		bSelecionado = oNumero.getAttribute('data-selecionado')
+		if (bSelecionado == 'true') {
+			iNumero = oNumero.getAttribute('data-numero')
+			aNumerosSelecionados.push(parseInt(iNumero))
 		}
 	}
 
@@ -13,37 +17,22 @@ function verificaAposta() {
 			url: '/termometro',
 			type: 'POST',
 			contentType: 'application/json',
-			// dataType: 'json',
 			data: JSON.stringify(aNumerosSelecionados),
 		})
-		.done(function(a, b, c) {
+		.done(function(a) {
 			window.location = a;
 		})
-		.fail(function() {
-			console.log('error');
-		})
-		.always(function(a, b, c) {
-
+		.fail(function(e) {
+			alert(e.responseText);
 		});
 }
 
 
 function onClickNumero(oNumero) {
-	// console.log(oNumero.classList)
-return
-	console.log('inicio')
-	setTimeout(function() {
-		// oNumero.classList.remove('focus')
-		// oNumero.classList.remove('active')
-		// document.querySelector('#contador').tabIndex = -1
-		// document.querySelector('#contador').focus()
-		// document.querySelector('#contador').select()
-		// document.querySelector('#contador').click()
-		//   	$(document.querySelector('#contador')).trigger('click');
-		//   	$(document.querySelector('#contador')).trigger('touchstart');
-
-		console.log('fim')
-	}, 100);
-	console.log('depois')
-
+	let bSelecionado = oNumero.getAttribute('data-selecionado')
+	if (bSelecionado == 'false') {
+		oNumero.setAttribute('data-selecionado', true)
+	} else {
+		oNumero.setAttribute('data-selecionado', false)
+	}
 }

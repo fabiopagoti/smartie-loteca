@@ -34,28 +34,36 @@ align-items: center;
 display: grid;
 }
 
-.label-numero:hover {
-background-color: purple
-}
-
-.label-numero:active {
-background-color: inherit;
-}
-
-.numero-texto {
-font-size: 1.5em;
-}
-
 .termometro-subtitulo {
 font-size: 1.5em;
 }
 
-.fundo-numeros {
-border-radius: 1%;
-border-color: #EDEDED;
+.numero-fundo {
 background-color: #EDEDED;
 }
 
-.numeros-space {
-padding: 0.7rem;
+.numero-area {
+border: #422470;
+border-style: solid;
+border-width: medium;
+-moz-border-radius: 50%;
+-webkit-border-radius: 50%;
+border-radius: 50%;
+display: inline-block;
+text-align: center;
+line-height: 1;
+}
+
+.numero-label {
+font-size: 1.5em;
+white-space: nowrap;
+}
+
+[data-selecionado="true"] {
+background-color: #422470;
+color: white;
+}
+
+[data-selecionado="false"] {
+background-color: #EDEDED;
 }

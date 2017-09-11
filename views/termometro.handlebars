@@ -2,39 +2,24 @@
 	<section class="container">
 		<h1 class="my-4">Termômetro</h1>
 		<p class="termometro-subtitulo">Selecione 15 números:</p>
-		<input id="contador" type="text" name="">
 	</section>
 	<form class="form-check form-check-inline col-12" method="post">
 		{{#each numeros}}
 		<div class="d-flex flex-row justify-content-center align-items-center flex-nowrap">
 			{{#each no}}
-			<div class="btn-group fundo-numeros p-md-3 p-sm-0" >
-				<label class="btn btn-sm btn-outline-primary rounded-circle align-middle label-numero" onclick="onClickNumero(this)">
-					<div class="numero-texto">
-						<input class="input-numero" data-bola="{{this}}" type="checkbox" checked="" >
+			<div class="numero-fundo p-md-1 p-sm-0">
+				<div class="numero-area align-middle p-3" data-numero="{{this}}" data-selecionado="false" onclick="onClickNumero(this)">
+					<label class="numero-label">
 						{{this}}
-						</input>
-					</div>
-				</label>
+					</label>
+				</div>
 			</div>
 			{{/each}}
 		</div>
 		{{/each}}
-
-		<div class="btn-group">
-			<label class="btn btn-primary active">
-				<input type="checkbox" checked=""> Checkbox 1
-			</label>
-			<label class="btn btn-primary">
-				<input type="checkbox"> Checkbox 2
-			</label>
-			<label class="btn btn-primary">
-				<input type="checkbox"> Checkbox 3
-			</label>
-		</div>
 	</form>
 	<section class="container d-flex justify-content-center align-items-center mt-2">
-		<button id="analisar" type="button" onclick="verificaAposta()" class="btn btn-primary btn-lg mx-5">Analisar combinação
+		<button type="button" onclick="verificaAposta()" class="btn btn-primary btn-lg mx-5">Analisar combinação
 		</button>
 	</section>
 </section>
