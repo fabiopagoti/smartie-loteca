@@ -24,7 +24,10 @@ const _setAssets = () => {
 
 const _setBodyParser = () => {
 	_app.use('/termometro', bodyParser.json())
+	_app.use('/login', bodyParser.urlencoded({}))
 }
+
+
 
 
 module.exports = defineMiddlewares
