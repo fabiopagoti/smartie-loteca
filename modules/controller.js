@@ -4,6 +4,8 @@
 const odd = require('odd')
 const even = require('even')
 
+const users = require('./data/users.json')
+const fs = require('fs')
 
 const _frequenciaImpar = {
 	3: 0,
@@ -38,4 +40,18 @@ const parImpar = (aNumeros) => {
 }
 
 
+const readUser = (sUsername) => {
+	return users[sUsername]
+}
+
+const createUser = (oUser) => {
+	fs.appendFileSync('./modules/data/users.json', 'abc')
+	return 'ok'
+}
+
+
 module.exports.parImpar = parImpar
+
+module.exports.readUser = readUser
+
+module.exports.createUser = createUser
