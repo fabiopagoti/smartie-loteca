@@ -29,4 +29,7 @@ const createServer = () => {
 	return server
 }
 
-module.exports = createServer
+let server = createServer()
+
+module.exports = server
+
