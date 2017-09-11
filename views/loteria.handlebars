@@ -8,7 +8,7 @@
 				<tbody>
 					<tr>
 						<th scope="row">Valor Aposta</th>
-						<td>{{valorAposta}}</td>
+						<td>R$ {{valorAposta}}</td>
 					</tr>
 					<tr>
 						<th scope="row">Datas dos Sorteios</th>
@@ -18,18 +18,20 @@
 							{{/formataDiasDaSemana}}
 						</td>
 					</tr>
+					{{#with aposta}}
 					<tr>
 						<th scope="row">Números disponíveis</th>
-						<td>{{aposta.numerosDisponiveis}}</td>
+						<td>{{numerosDisponiveis}}</td>
 					</tr>
 					<tr>
 						<th scope="row">Números por aposta</th>
-						<td>{{aposta.numerosAposta}}</td>
+						<td>{{numerosAposta}}</td>
 					</tr>
 					<tr>
 						<th scope="row">Premiado com</th>
-						<td>{{aposta.numerosGanhadores}} números ou mais</td>
+						<td>{{numerosGanhadores}} números ou mais</td>
 					</tr>
+					{{/with}}
 				</tbody>
 			</table>
 		</div>

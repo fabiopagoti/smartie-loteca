@@ -7,14 +7,12 @@
 		{{#each numeros}}
 		<div class="d-flex flex-row justify-content-center align-items-center flex-nowrap">
 			{{#each no}}
-			<div class="btn-group fundo-numeros p-md-3 p-sm-0" data-toggle="buttons">
-				<label class="btn btn-sm btn-outline-primary rounded-circle align-middle label-numero" >
-					<div class="numero-texto">
-						<input class="input-numero" data-bola="{{this}}" type="checkbox" enabled>
+			<div class="numero-fundo p-md-1 p-sm-0">
+				<div class="numero-area align-middle p-3" data-numero="{{this}}" data-selecionado="false" onclick="onClickNumero(this)">
+					<label class="numero-label">
 						{{this}}
-						</input>
-					</div>
-				</label>
+					</label>
+				</div>
 			</div>
 			{{/each}}
 		</div>

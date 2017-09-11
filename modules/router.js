@@ -61,7 +61,6 @@ const defineRouter = (app) => {
 	})
 
 	app.get('/resultado', (request, response) => {
-		console.log(request.query)
 		let oQuery = request.query
 		if (oQuery.frequencia) {
 
