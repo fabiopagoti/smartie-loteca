@@ -1,7 +1,5 @@
-'use strict'
-
 /** 
-*	Ponto inicial da app
-*/
+ *	Ponto inicial da app
+ */
 
-require('./modules/server')()
+require('./modules/server')
