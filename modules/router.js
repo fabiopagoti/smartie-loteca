@@ -27,10 +27,10 @@ const defineRouter = (app) => {
 			termometro: true,
 			numeros: {
 				linha1: {
-					no: [...Array(5).keys()].map(x => ++x)
+					no: ['01','02','03','04','05']
 				},
 				linha2: {
-					no: [...Array(5).keys()].map(x => ++x + 5)
+					no: ['06','07','08','09','10']
 				},
 				linha3: {
 					no: [...Array(5).keys()].map(x => ++x + 10)
@@ -101,6 +101,15 @@ const defineRouter = (app) => {
 		response.render('quem-somos', {
 			quemSomos: true
 		})
+	})
+
+	app.post('/login', (request, response) => {
+		let oUser = controller.readUser(request.body.username)
+		response.send(oUser)
+	})
+
+	app.post('/cadastrar', (request, response) => {
+		response.send(controller.createUser())
 	})
 
 	return app
