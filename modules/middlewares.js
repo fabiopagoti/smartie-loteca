@@ -4,6 +4,7 @@
 
 const express = require('express')
 const bodyParser = require('body-parser')
+const controllerTermos = require('../termos').controller
 
 let _app
 
@@ -14,6 +15,7 @@ const defineMiddlewares = (app) => {
 
 	_setAssets()
 	_setBodyParser()
+	_setControllers()
 
 	return app
 }
@@ -27,6 +29,9 @@ const _setBodyParser = () => {
 	_app.use('/login', bodyParser.urlencoded({}))
 }
 
+const _setControllers = () => {
+	_app.use('/termos', controllerTermos)
+}
 
 
 
