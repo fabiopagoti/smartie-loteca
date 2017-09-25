@@ -1,5 +1,23 @@
 <section class="container">
 	<div class="text-justify">
 		<h1 class="my-4">Glossário</h1>
+
+		<table class="table table-striped table-hover table-bordered">
+			<thead class="thead-inverse">
+				<tr>
+					<th>Termo</th>
+					<th>Descrição</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				{{#each glossario}}
+				<tr>
+					<td>{{termo}}</td>
+					<td>{{descricao}}</td>					
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
 	</div>
 </section>

@@ -4,7 +4,7 @@
 
 // Dependencias
 const express = require('express')
-
+const mongoose = require('mongoose')
 const configuration = require('./configuration')
 const middlewares = require('./middlewares')
 const router = require('./router')
@@ -13,6 +13,8 @@ const app = express()
 
 const createServer = () => {
 
+	mongoose.connect('mongodb://localhost/smartie-loteca')
+	
 	// Configuracoes Gerais
 	configuration(app)
 
@@ -27,6 +29,7 @@ const createServer = () => {
 	})
 
 	return server
+	
 }
 
 let server = createServer()

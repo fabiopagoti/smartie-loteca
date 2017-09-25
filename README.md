@@ -1,2 +1,2 @@
 # smartie-loteca
-MasterTech - Back end - Projeto 1 - SmartieLoteca
+MasterTech - Back end - SmartieLoteca
