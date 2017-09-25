@@ -34,9 +34,8 @@ const _setHandlebars = () => {
 		helpers: helpers
 	}))
 	_app.set('view engine', 'handlebars')
-
 	// Diretorio com as visoes
-	// _app.set('view', process.cwd() + '/views') 
+	_app.set('views', process.cwd() + '/views') 
 }
 
 module.exports = setConfiguration
