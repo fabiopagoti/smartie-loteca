@@ -4,7 +4,12 @@
 
 const express = require('express')
 const bodyParser = require('body-parser')
+const controllerHome = require('../home').controller
 const controllerTermos = require('../termos').controller
+const controllerAgenda = require('../agenda').controller
+const controllerSobre = require('../sobre').controller
+const controllerTermometro = require('../termometro').controller
+const controllerQuemSomos = require('../quem_somos').controller
 
 let _app
 
@@ -30,7 +35,12 @@ const _setBodyParser = () => {
 }
 
 const _setControllers = () => {
-	_app.use('/termos', controllerTermos)
+	_app.use('/', controllerHome)
+	_app.use('/glossario', controllerTermos)
+	_app.use('/agenda', controllerAgenda)
+	_app.use('/sobre', controllerSobre)
+	_app.use('/termometro', controllerTermometro)
+	_app.use('/quem-somos', controllerQuemSomos)
 }
 
 
