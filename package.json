@@ -15,7 +15,7 @@
 	"main": "index.js",
 	"scripts": {
 		"install": "echo Obrigado por desenvolver a smartie-loteca conosco!",
-		"start": "./scripts/start.sh",
+		"start": "pm2-dev index.js",
 		"pretest": "eslint .",
 		"test": "mocha"
 	},
