@@ -3,6 +3,7 @@
 **************************/
 
 const express = require('express')
+const token = require('../login/token')
 const bodyParser = require('body-parser')
 const controllerHome = require('../home').controller
 const controllerLoterias = require('../loterias').controller
@@ -11,6 +12,7 @@ const controllerAgenda = require('../agenda').controller
 const controllerSobre = require('../sobre').controller
 const controllerTermometro = require('../termometro').controller
 const controllerQuemSomos = require('../quem_somos').controller
+const controllerLogin = require('../login').controller
 
 let _app
 
@@ -19,11 +21,16 @@ const defineMiddlewares = (app) => {
 	// Captura app express para reutilizar nas funcoes _auxiliares
 	_app = app
 
+	_setSecurity()
 	_setAssets()
 	_setBodyParser()
 	_setControllers()
 
 	return app
+}
+
+const _setSecurity = () => {
+	_app.use(token)
 }
 
 const _setAssets = () => {
@@ -43,6 +50,8 @@ const _setControllers = () => {
 	_app.use('/sobre', controllerSobre)
 	_app.use('/termometro', controllerTermometro)
 	_app.use('/quem-somos', controllerQuemSomos)
+	_app.use('/login', controllerLogin)
+
 }
 
 

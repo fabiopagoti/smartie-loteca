@@ -13,7 +13,10 @@ const app = express()
 
 const createServer = () => {
 
-	mongoose.connect('mongodb://localhost/smartie-loteca')
+	mongoose.connect('mongodb://localhost/smartie-loteca', { 
+		useMongoClient: true, 
+		promiseLibrary: global.Promise
+	})
 	
 	// Configuracoes Gerais
 	configuration(app)
