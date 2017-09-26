@@ -1,4 +1,4 @@
-const jwt = require('express-jwt');
+const expressJwt = require('express-jwt');
 
 const aPublicUrls = [
 '/',
@@ -7,11 +7,12 @@ const aPublicUrls = [
 '/login',
 /\/css*/,
 /\/js*/,
-/\/img*/
+/\/img*/,
+'/favicon.ico'
 ]
 
-const token = jwt({
-	secret: 'a'
+const token = expressJwt({
+	secret: 'dev-secret'
 }).unless({
 	path: aPublicUrls
 })

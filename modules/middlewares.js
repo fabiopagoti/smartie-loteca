@@ -21,7 +21,7 @@ const defineMiddlewares = (app) => {
 	// Captura app express para reutilizar nas funcoes _auxiliares
 	_app = app
 
-	_setSecurity()
+	// _setSecurity()
 	_setAssets()
 	_setBodyParser()
 	_setControllers()

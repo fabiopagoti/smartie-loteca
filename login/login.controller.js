@@ -1,5 +1,6 @@
 const express = require('express')
 const token = require('./token')
+const jwt = require('jsonwebtoken')
 
 const router = express.Router()
 
@@ -10,12 +11,35 @@ router.get('/', (request, response) => {
 })
 
 router.post('/', (request, response) => {
+	const payload = {
+		foo: 'bar'
+	}
+	const secret = 'dev-secret'
+	const options = {
+		algorithm: 'HS256'
+	}
 
-	// console.log(token)
-	response.send({
-		message: 'ok'
-		// token: token
-	})
+	const onJwtSigned = (err, token) => {
+		if(err){
+			response
+				.status(403)
+				.send({
+					success: false,
+					message: 'Token not generated'
+				})
+			return
+		}
+
+		response
+		.status(200)
+		.send({
+			success: true,
+			token: token
+		})
+	}
+	
+	jwt.sign(payload, secret, options, onJwtSigned )
+	
 })
 
 
