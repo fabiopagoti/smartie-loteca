@@ -3,9 +3,10 @@ const mongoose = require('mongoose');
 const Schema = {
 	termo: {
 		type: String,
-		required: true
+		required: true,
+		unique: true
 	},
-	resumo: {
+	definicao: {
 		type: String,
 		required: true
 	}
