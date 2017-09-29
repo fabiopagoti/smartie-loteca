@@ -16,6 +16,8 @@ const controllerLogin = require('../login').controller
 
 
 const apiTermos = require('../termos').controller
+const apiLotofacil = require('../loterias/lotofacil').controller
+
 
 let _app
 
@@ -58,6 +60,7 @@ const _setControllers = () => {
 	_app.use('/login', controllerLogin)
 
 	_app.use('/api/termos', apiTermos)	
+	_app.use('/api/lotofacil', apiLotofacil)	
 
 }
 

@@ -1,4 +1,3 @@
-// const mongoose = require('mongoose')
 const Termo = require('./TermosSchema')
 const express = require('express')
 const router = express.Router()
