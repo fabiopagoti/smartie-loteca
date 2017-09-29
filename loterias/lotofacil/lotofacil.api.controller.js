@@ -11,7 +11,7 @@ const preparaLotofacil = (oConcurso) => {
 		impar: odd(oConcurso.dezenas).length,
 		par: even(oConcurso.dezenas).length
 	}
-	console.log(oConcurso)
+	
 	return oConcurso
 }
 
@@ -24,11 +24,10 @@ router.get('/', (req, res) =>  {
 		oQuery.concurso = req.query.concurso
 	}
 
-	Lotofacil.find(oQuery, (err, aConcursos) => {
+	Lotofacil.find(oQuery, '-_id concurso dezenas', (err, aConcursos) => {
 		res
 		.status(200)
 		.json({
-			success: true,
 			count: aConcursos.length,
 			data: aConcursos
 		})
@@ -105,8 +104,6 @@ const analisaDezenas = (aDezenas, res) => {
 		})
 	})
 
-	console.log('Finalizando analise')
-
 }
 
 router.post('/termometro', (req, res) => {
@@ -117,17 +114,12 @@ router.post('/termometro', (req, res) => {
 
 router.get('/estatisticas', (req, res) => {
 	let iNumero = req.query.numero
-	console.log(iNumero)
-	
-	// Blog.$where('this.username.indexOf("val") !== -1').
-
+		
 	let oQuery = Lotofacil
 		.find({},'-_id concurso dezenas')
 		.$where(`this.dezenas.indexOf(${iNumero}) !== -1`)
 
 	oQuery.exec((err, aConcursos) => {
-
-
 		Lotofacil.count((err, count) => {
 
 			res.json({

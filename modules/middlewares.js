@@ -26,7 +26,7 @@ const defineMiddlewares = (app) => {
 	// Captura app express para reutilizar nas funcoes _auxiliares
 	_app = app
 
-	// _setSecurity()
+	_setSecurity()
 	_setAssets()
 	_setBodyParser()
 	_setControllers()
@@ -57,8 +57,8 @@ const _setControllers = () => {
 	_app.use('/sobre', controllerSobre)
 	_app.use('/termometro', controllerTermometro)
 	_app.use('/quem-somos', controllerQuemSomos)
+	
 	_app.use('/login', controllerLogin)
-
 	_app.use('/api/termos', apiTermos)	
 	_app.use('/api/lotofacil', apiLotofacil)	
 

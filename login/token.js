@@ -8,7 +8,8 @@ const aPublicUrls = [
 /\/css*/,
 /\/js*/,
 /\/img*/,
-'/favicon.ico'
+'/favicon.ico',
+'/api/lotofacil/estatisticas'
 ]
 
 const token = expressJwt({
