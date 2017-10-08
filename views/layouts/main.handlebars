@@ -18,18 +18,76 @@
 
 <body class="mdc-typography">
 	<section>
-		<header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--waterfall mdc-toolbar--fixed-lastrow-only">
-			<div class="mdc-toolbar__row">
-				<section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-					<a href="#" class="material-icons mdc-toolbar__icon--menu">menu</a>
-					<span class="mdc-toolbar__title">Smartie Loteca</span>
-				</section>
-			</div>
-		</header>
+		<aside class="mdc-temporary-drawer">
+			<nav class="mdc-temporary-drawer__drawer">
+				<div class="mdc-permanent-drawer__toolbar-spacer"></div>
+				<!-- 
+					Usar quando usuario estiver logado
+				<header class="mdc-temporary-drawer__header">
+					<div class="mdc-temporary-drawer__header-content">
+						Header here
+					</div>
+				</header>
+			-->
+			<nav class="mdc-temporary-drawer__content mdc-list">
+				
+				<a class="mdc-list-item {{#if meusJogos}}mdc-temporary-drawer--selected{{/if}}" href="/meus-jogos">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">person</i>Meus Jogos
+				</a>
+				<a class="mdc-list-item {{#if termometro}}mdc-temporary-drawer--selected{{/if}}" href="/termometro">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">whatshot</i>Termômetro
+				</a>
+				
+				<hr class="mdc-list-divider">
+				
+				<a class="mdc-list-item {{#if sobre}}mdc-temporary-drawer--selected{{/if}}" href="/sobre">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">info_outline</i>Sobre
+				</a>
+				<a class="mdc-list-item {{#if resultados}}mdc-temporary-drawer--selected{{/if}}" href="/resultados">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">view_list</i>Resultados
+				</a>
 
-		<main class="mdc-toolbar-fixed-adjust">
-			{{{body}}}
-		</main>
+				<hr class="mdc-list-divider">
+
+				<a class="mdc-list-item {{#if ajuda}}mdc-temporary-drawer--selected{{/if}}" href="/ajuda">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">help</i>Ajuda
+				</a>
+				<a class="mdc-list-item {{#if quemSomos}}mdc-temporary-drawer--selected{{/if}}" href="/quem-somos">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">people</i>Quem Somos
+				</a>
+			</nav>
+		</nav>
+	</aside>
+</section>
+<section>
+	<header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--waterfall mdc-toolbar--fixed-lastrow-only">
+		<div class="mdc-toolbar__row">
+			<section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+				<a href="#" id="menu-button" class="material-icons mdc-toolbar__icon--menu">menu</a>
+				<span class="mdc-toolbar__title">
+					<a href="/">Smartie Loteca</a>
+				</span>
+			</section>
+			<section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
+				<a id="loteria-menu" class="material-icons mdc-toolbar__icon toggle mdc-menu-anchor" aria-label="More" alt="More">more_vert</a>
+				<div class="mdc-simple-menu" tabindex="-1">
+					<ul class="mdc-simple-menu__items mdc-list" role="menu" aria-hidden="true">
+						<li class="mdc-list-item" role="menuitem" tabindex="0">
+							Lotofácil
+						</li>
+						<li class="mdc-list-item" role="menuitem" tabindex="0">
+							Mega-Sena
+						</li>
+					</ul>
+				</div>
+			</section>
+
+		</div>
+	</header>
+
+	<main class="mdc-toolbar-fixed-adjust">
+		{{{body}}}
+	</main>
 
 		<!-- <nav class="navbar navbar-toggleable-md navbar-inverse bg-success">
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,9 +146,16 @@
 		<script src="material-components-web.js"></script>
 		<script>mdc.autoInit()</script>
 		<script>
-			var toolbar = mdc.toolbar.MDCToolbar.attachTo(document.querySelector('.mdc-toolbar'));
-			toolbar.fixedAdjustElement = document.querySelector('.mdc-toolbar-fixed-adjust');
+		var toolbar = mdc.toolbar.MDCToolbar.attachTo(document.querySelector('.mdc-toolbar'));
+		toolbar.fixedAdjustElement = document.querySelector('.mdc-toolbar-fixed-adjust');
+
+		let drawer = new mdc.drawer.MDCTemporaryDrawer(document.querySelector('.mdc-temporary-drawer'));
+		document.querySelector('#menu-button').addEventListener('click', () => drawer.open = true);
+
+		let menu = new mdc.menu.MDCSimpleMenu(document.querySelector('.mdc-simple-menu'));
+		document.querySelector('#loteria-menu').addEventListener('click', () => menu.open = !menu.open);
 		</script>
+
 
 	</section>
 

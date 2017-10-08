@@ -1,0 +1,21 @@
+<section>
+	<div class="mdc-layout-grid">
+		<div class="mdc-layout-grid__inner">
+			{{#each loterias}}
+			<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4" >
+				
+					<div class="mdc-card">
+						<section class="mdc-card__media">
+							<h1 class="mdc-card__title mdc-card__title--large">{{nome}}</h1>
+						</section>
+						<section class="mdc-card__actions">
+							<button class="mdc-button mdc-button--compact mdc-card__action" onclick="location.href = '/loterias/{{href}}'">Regras</button>
+							<button class="mdc-button mdc-button--compact mdc-card__action" onclick="location.href = '/loterias/{{href}}/resultados'">Resultados</button>
+						</section>
+					</div>
+				
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</section>
