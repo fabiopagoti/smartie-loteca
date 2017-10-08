@@ -2,13 +2,36 @@
 <html>
 <head>
 	<title>Smartie-Loteca</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="/css/custom.css">
+		<link rel="stylesheet" type="text/css" href="/css/custom.css"> 
+	-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" type="text/css" href="/material-components-web.css">
+	<link rel="stylesheet" type="text/css" href="/css/theme.css">
+
 </head>
-<body>
+
+<body class="mdc-typography">
 	<section>
-		<nav class="navbar navbar-toggleable-md navbar-inverse bg-success">
+		<header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--waterfall mdc-toolbar--fixed-lastrow-only">
+			<div class="mdc-toolbar__row">
+				<section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+					<a href="#" class="material-icons mdc-toolbar__icon--menu">menu</a>
+					<span class="mdc-toolbar__title">Smartie Loteca</span>
+				</section>
+			</div>
+		</header>
+
+		<main class="mdc-toolbar-fixed-adjust">
+			{{{body}}}
+		</main>
+
+		<!-- <nav class="navbar navbar-toggleable-md navbar-inverse bg-success">
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -52,17 +75,23 @@
 				</ul>
 			</div>
 
-		</nav>
+		</nav> -->
 	</section>
-
-	{{{body}}}
+	
 
 	<!-- Scripts -->
 	<section>
-		<script src="/js/jquery.min.js"></script>
+		<!-- <script src="/js/jquery.min.js"></script>
 		<script src="/js/tether.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
-		<script src="/js/termometro.js"></script>
+		<script src="/js/termometro.js"></script> -->
+		<script src="material-components-web.js"></script>
+		<script>mdc.autoInit()</script>
+		<script>
+			var toolbar = mdc.toolbar.MDCToolbar.attachTo(document.querySelector('.mdc-toolbar'));
+			toolbar.fixedAdjustElement = document.querySelector('.mdc-toolbar-fixed-adjust');
+		</script>
+
 	</section>
 
 </body>

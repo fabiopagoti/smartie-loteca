@@ -35,11 +35,13 @@ const defineMiddlewares = (app) => {
 }
 
 const _setSecurity = () => {
-	_app.use(token)
+	// _app.use(token)
 }
 
 const _setAssets = () => {
 	_app.use(express.static('public'))
+	_app.use(express.static('node_modules/material-components-web/dist/'))
+	
 }
 
 const _setBodyParser = () => {
