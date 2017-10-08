@@ -1,0 +1,59 @@
+:root 
+{
+  --mdc-theme-primary: #15874d;
+  --mdc-theme-primary-light: #52b87a;
+  --mdc-theme-primary-dark: #005924;
+  --mdc-theme-secondary: #52b87a;
+  --mdc-theme-secondary-light: #85eba9;
+  --mdc-theme-secondary-dark: #16874d;
+  --mdc-theme-background: white;
+}
+
+.element-card.earth {
+        --mdl-theme-primary: #795548;
+    --mdl-theme-text-primary-on-primary: var(--mdl-theme-text-primary-on-dark);
+  }
+
+  .element-card.wind {
+    --mdl-theme-primary: #9e9e9e;
+    --mdl-theme-text-primary-on-primary: var(--mdl-theme-text-primary-on-light);
+  }
+
+  .element-card.fire {
+    --mdl-theme-primary: #f44336;
+    --mdl-theme-text-primary-on-primary: var(--mdl-theme-text-primary-on-dark);
+  }
+
+  .element-card.water {
+    --mdl-theme-primary: #00bcd4;
+    --mdl-theme-text-primary-on-primary: var(--mdl-theme-text-primary-on-light);
+  }
+
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-80 { font-size: 80px; }
+
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }  
+
+
+/* Cards na Home */
+.card-wrapper-link{
+  text-decoration: none;
+}
+
+.mdc-card > i{
+  text-align: center;
+  background-color: var(--mdc-theme-secondary);
+  color: var(--mdc-theme-background);
+}
