@@ -48,11 +48,10 @@
 
 /*  Home */
 .mdc-toolbar__title a{
-    color: inherit;
-    cursor: auto;
-    text-decoration: none;
+  color: inherit;
+  cursor: auto;
+  text-decoration: none;
 }
-
 
 /* Cards na Home */
 .card-wrapper-link{
@@ -63,4 +62,12 @@
   text-align: center;
   background-color: var(--mdc-theme-secondary);
   color: var(--mdc-theme-background);
+}
+
+/* Quem Somos */
+.amanda{
+  height: 200px;
+  background-image: url(https://www.gravatar.com/avatar/71532a82df2d87c88947921e7cbfee29?s=200);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
