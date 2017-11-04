@@ -55,7 +55,9 @@
     "jsonwebtoken": "^8.0.1",
     "material-components-web": "^0.21.1",
     "moment": "^2.18.1",
-    "odd": "^0.1.0"
+    "odd": "^0.1.0",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1"
   },
   "devDependencies": {
     "eslint": "^4.7.2",

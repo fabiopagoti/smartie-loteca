@@ -5,10 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- 
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="/css/custom.css"> 
-	-->
+
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" type="text/css" href="/material-components-web.css">
@@ -30,9 +27,14 @@
 				</header>
 			-->
 			<nav class="mdc-temporary-drawer__content mdc-list">
-				
+				<a class="mdc-list-item {{#if login}}mdc-temporary-drawer--selected{{/if}}" href="/login">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">account_circle</i>Login
+				</a>
+				<a class="mdc-list-item {{#if perfil}}mdc-temporary-drawer--selected{{/if}}" href="/perfil">
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">account_circle</i>Perfil
+				</a>
 				<a class="mdc-list-item {{#if meusJogos}}mdc-temporary-drawer--selected{{/if}}" href="/meus-jogos">
-					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">person</i>Meus Jogos
+					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">games</i>Meus Jogos
 				</a>
 				<a class="mdc-list-item {{#if termometro}}mdc-temporary-drawer--selected{{/if}}" href="/termometro">
 					<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">whatshot</i>Termômetro
@@ -68,6 +70,7 @@
 					<a href="/">Smartie Loteca</a>
 				</span>
 			</section>
+			{{!-- 
 			<section class="mdc-toolbar__section mdc-toolbar__section--align-end mdc-toolbar__section--shrink-to-fit">
 				<a id="loteria-menu" class="material-icons mdc-toolbar__icon toggle mdc-menu-anchor" aria-label="More" alt="More">more_vert</a>
 				<div class="mdc-simple-menu" tabindex="-1">
@@ -81,7 +84,7 @@
 					</ul>
 				</div>
 			</section>
-
+			--}}
 		</div>
 	</header>
 
@@ -152,8 +155,15 @@
 		let drawer = new mdc.drawer.MDCTemporaryDrawer(document.querySelector('.mdc-temporary-drawer'));
 		document.querySelector('#menu-button').addEventListener('click', () => drawer.open = true);
 
-		let menu = new mdc.menu.MDCSimpleMenu(document.querySelector('.mdc-simple-menu'));
-		document.querySelector('#loteria-menu').addEventListener('click', () => menu.open = !menu.open);
+		// let menu = new mdc.menu.MDCSimpleMenu(document.querySelector('.mdc-simple-menu'));
+		// document.querySelector('#loteria-menu').addEventListener('click', () => menu.open = !menu.open);
+
+        var tfs = document.querySelectorAll('.mdc-textfield');
+        for (var i = 0, tf; tf = tfs[i]; i++) {
+          mdc.textfield.MDCTextfield.attachTo(tf);
+        }
+    
+    
 		</script>
 
 

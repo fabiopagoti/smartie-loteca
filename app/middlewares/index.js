@@ -4,7 +4,7 @@
 
 const express = require('express')
 const bodyParser = require('body-parser')
-// const token = require('../../login/token')
+const passport = require('passport')
 
 // const apiTermos = require('../termos').controller
 // const apiLotofacil = require('../loterias/lotofacil').controller
@@ -22,9 +22,9 @@ function defineMiddlewares() {
 	return this
 }
 
-// const _setSecurity = () => {
-// 	this.use(token)
-// }
+const _setSecurity = () => {
+	
+}
 
 function _setAssets(){
 	app.use(express.static('public'))
@@ -33,7 +33,7 @@ function _setAssets(){
 }
 
 function _setBodyParser(){
-	app.use('/login', bodyParser.urlencoded({}))
+	app.use('/login', bodyParser.urlencoded({ extended: true }))
 	app.use('/', bodyParser.json())
 }
 

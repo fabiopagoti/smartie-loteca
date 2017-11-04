@@ -1,3 +1,3 @@
 const controller = require('./login.controller.js')
 
-module.exports.controller = controller
+module.exports = controller
