@@ -1,9 +1,12 @@
 const express = require('express')
-
 const router = express.Router()
+// const controller = require('./ajuda.controller.js')
 
-router.get('/', (req, res) =>  {
-	res.render('../ajuda/ajuda')
+router.get('/', (request, response) => {
+	response.render('../ajuda/ajuda', {
+		anonimo: true,
+		ajuda: true
+	})
 })
 
-module.exports = router;
+module.exports = router

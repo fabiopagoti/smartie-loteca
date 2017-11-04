@@ -1,47 +1,51 @@
-const express = require('express')
-const token = require('./token')
-const jwt = require('jsonwebtoken')
 
-const router = express.Router()
+// const token = require('./token')
+// const jwt = require('jsonwebtoken')
+// router.post('/', (request, response) => {
+// 	const payload = {
+// 		foo: 'bar'
+// 	}
+// 	const secret = 'dev-secret'
+// 	const options = {
+// 		algorithm: 'HS256'
+// 	}
 
-router.get('/', (request, response) => {
-	response.render('../login/login', {
-		login: true
-	})
-})
+// 	const onJwtSigned = (err, token) => {
+// 		if(err){
+// 			response
+// 				.status(403)
+// 				.send({
+// 					success: false,
+// 					message: 'Token not generated'
+// 				})
+// 			return
+// 		}
 
-router.post('/', (request, response) => {
-	const payload = {
-		foo: 'bar'
-	}
-	const secret = 'dev-secret'
-	const options = {
-		algorithm: 'HS256'
-	}
+// 		response
+// 		.status(200)
+// 		.send({
+// 			success: true,
+// 			token: token
+// 		})
+// 	}
 
-	const onJwtSigned = (err, token) => {
-		if(err){
-			response
-				.status(403)
-				.send({
-					success: false,
-					message: 'Token not generated'
-				})
-			return
-		}
+// 	jwt.sign(payload, secret, options, onJwtSigned )
 
-		response
-		.status(200)
-		.send({
-			success: true,
-			token: token
+// })
+
+const Usuario = require('../usuario/Usuario.js')
+
+module.exports.autenticar = (email, senha) => {
+
+	return new Promise( (resolve, reject) => {
+
+		Usuario.auth(email, senha)
+		.then((oUser) => {
+			resolve(oUser)
 		})
-	}
-	
-	jwt.sign(payload, secret, options, onJwtSigned )
-	
-})
+		.catch((err) => {
+			reject(err)
+		})
+	} )
 
-
-
-module.exports = router
+}

@@ -5,6 +5,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const passport = require('passport')
+// const cookieParser = require('cookie-parser')
+const expressSession = require('express-session')
 
 // const apiTermos = require('../termos').controller
 // const apiLotofacil = require('../loterias/lotofacil').controller
@@ -17,7 +19,8 @@ function defineMiddlewares() {
 	// _setSecurity()
 	_setAssets()
 	_setBodyParser()
-	_setControllers()
+	// _setCookieParser()
+	_setExpressSession()
 
 	return this
 }
@@ -33,14 +36,21 @@ function _setAssets(){
 }
 
 function _setBodyParser(){
-	app.use('/login', bodyParser.urlencoded({ extended: true }))
+	app.use(['/cadastro', '/login'], bodyParser.urlencoded({ extended: true }))
 	app.use('/', bodyParser.json())
 }
 
-function _setControllers(){
-
+function _setCookieParser(){
+	app.use(cookieParser())
 }
 
+function _setExpressSession(){
+	app.use(expressSession({
+	  secret: 'secret2',
+	  resave: true,
+	  saveUninitialized: false
+	}));
+}
 
 
 module.exports = defineMiddlewares
