@@ -8,6 +8,8 @@ const controllerLogin = require('../login')
 const controllerCadastro = require('../cadastro')
 const controllerSobre = require('../sobre')
 
+const controllerMeusJogos = require('../meus_jogos')
+
 // const controllerLoterias = require('../loterias').controller
 // const controllerTermos = require('../termos').controller
 // const controllerAgenda = require('../agenda').controller
@@ -18,17 +20,18 @@ let app
 function defineRouter(){
 	app = this
 
+	// Rotas Anonimas
 	app.use('/', controllerHome)
 	app.use('/login', controllerLogin)
 	app.use('/cadastro', controllerCadastro)
+	
+	// Rotas Comuns
 	app.use('/sobre', controllerSobre)
 	app.use('/ajuda', controllerAjuda)
 	app.use('/quem-somos', controllerQuemSomos)
 
-	app.get('/cookie', (req, res) => {
-		res.cookie('biscoito', { a: 2})
-		res.send('ok')
-	})
+	// Rotas autentidas
+	app.use('/meusJogos', controllerMeusJogos)
 
 	// app.use('/loterias', controllerLoterias)
 	// app.use('/glossario', controllerTermos)

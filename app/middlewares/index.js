@@ -46,9 +46,10 @@ function _setCookieParser(){
 
 function _setExpressSession(){
 	app.use(expressSession({
-	  secret: 'secret2',
-	  resave: true,
-	  saveUninitialized: false
+		name: 'smartie',
+		secret: 'secret2',
+		resave: true,
+		saveUninitialized: false
 	}));
 }
 
