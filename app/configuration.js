@@ -25,7 +25,10 @@
  function _setTemplateEngine(){
  	app.engine('handlebars', handlebars({
  		defaultLayout: 'main',
- 		helpers: helpers
+ 		helpers: helpers,
+ 		partialsDir: [
+ 			process.cwd() + '/views/partials/'
+ 		]
  	}))
  	app.set('view engine', 'handlebars')
 	// Diretorio com as visoes

@@ -13,6 +13,7 @@ router.get('/', (request, response) => {
 	}
 
 	response.render('../home/home', {
+		titulo: null,
 		anonimo: true,
 		home: true
 	})

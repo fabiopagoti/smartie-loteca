@@ -2,10 +2,16 @@ const express = require('express')
 const router = express.Router()
 const controller = require('./login.controller.js')
 
+const handlebars = require('express-handlebars')
+
 router.get('/', (request, response) => {
 	response.render('../login/login', {
+		titulo: 'Login',
 		anonimo: true,
-		login: true
+		login: true,
+		partials: {
+			scripts: '<script src="js/pages/login/login-scripts.js"></script>'
+		}
 	})
 })
 
@@ -17,10 +23,14 @@ router.post('/', (request, response) => {
 		response.redirect('/')
 	})
 	.catch((err) => {
-		console.log(err)
 
-		response.render('../cadastro/cadastro', {
-			mensagem: err
+		response.render('../login/login', {
+			anonimo: true,
+			login: true,
+			mensagem: err.message,
+			partials: {
+				scripts: '<script src="js/pages/login/login-scripts.js"></script>'
+			}
 		})
 	})
 })

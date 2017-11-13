@@ -43,17 +43,24 @@ Schema.statics.auth = function (email, senha) {
 			console.log(err || oUser)
 
 			if (err) {
-				reject(err)
+				reject(new Error({
+					erro: err,
+					mensagem: 'Erro desconhecido'
+				}))
+				return
 			} else if (!oUser) {
 				var err = new Error('Usuario nao encontrado');
 				err.status = 401;
 				reject(err);
+				return
 			}
 			bcryptjs.compare(senha, oUser.senha, function (err, result) {
 				if (result === true) {
 					resolve(oUser)
+					return
 				} else {
 					reject(new Error('Senha incorreta'))
+					return
 				}
 			})
 		});

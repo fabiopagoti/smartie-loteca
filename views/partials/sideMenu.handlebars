@@ -1,0 +1,79 @@
+<section>
+	<aside class="mdc-temporary-drawer">
+		<nav class="mdc-temporary-drawer__drawer">
+
+			<div class="mdc-permanent-drawer__toolbar-spacer">
+			</div>
+
+				<!-- 
+					Cabecalho do menu lateral
+					Usar quando usuario estiver logado 
+				-->
+
+				<!-- <header class="mdc-temporary-drawer__header">
+					<div class="mdc-temporary-drawer__header-content">
+						Header here
+					</div>
+				</header> -->
+
+				{{#if anonimo}}
+				<nav class="mdc-temporary-drawer__content mdc-list">
+
+					<a class="mdc-list-item {{#if login}}mdc-temporary-drawer--selected{{/if}}" href="/login">
+						<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">account_circle</i>Login
+					</a>
+
+					<a class="mdc-list-item {{#if sobre}}mdc-temporary-drawer--selected{{/if}}" href="/sobre">
+						<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">info_outline</i>Sobre
+					</a>
+
+					<a class="mdc-list-item {{#if ajuda}}mdc-temporary-drawer--selected{{/if}}" href="/ajuda">
+						<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">help</i>Ajuda
+					</a>
+					<a class="mdc-list-item {{#if quemSomos}}mdc-temporary-drawer--selected{{/if}}" href="/quem-somos">
+						<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">people</i>Quem Somos
+					</a>
+				</nav>
+				{{/if}}
+
+				{{#if logado}}
+
+				<nav class="mdc-temporary-drawer__content mdc-list">
+
+					<a class="mdc-list-item {{#if login}}mdc-temporary-drawer--selected{{/if}}" href="/login">
+						<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">account_circle</i>Login
+					</a>
+					<a class="mdc-list-item {{#if perfil}}mdc-temporary-drawer--selected{{/if}}" href="/perfil">
+						<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">account_circle</i>Perfil
+					</a>
+					<a class="mdc-list-item {{#if meusJogos}}mdc-temporary-drawer--selected{{/if}}" href="/meus-jogos">
+						<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">games</i>Meus Jogos
+					</a>
+					<a class="mdc-list-item {{#if termometro}}mdc-temporary-drawer--selected{{/if}}" href="/termometro">
+						<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">whatshot</i>Termômetro
+					</a>
+
+					<hr class="mdc-list-divider">
+
+					<a class="mdc-list-item {{#if sobre}}mdc-temporary-drawer--selected{{/if}}" href="/sobre">
+						<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">info_outline</i>Sobre
+					</a>
+					<a class="mdc-list-item {{#if resultados}}mdc-temporary-drawer--selected{{/if}}" href="/resultados">
+						<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">view_list</i>Resultados
+					</a>
+
+					<hr class="mdc-list-divider">
+
+					<a class="mdc-list-item {{#if ajuda}}mdc-temporary-drawer--selected{{/if}}" href="/ajuda">
+						<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">help</i>Ajuda
+					</a>
+					<a class="mdc-list-item {{#if quemSomos}}mdc-temporary-drawer--selected{{/if}}" href="/quem-somos">
+						<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">people</i>Quem Somos
+					</a>
+				</nav>
+
+				{{/if}}	
+
+			</nav>
+		</aside>
+	</section>

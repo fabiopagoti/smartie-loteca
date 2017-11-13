@@ -17,7 +17,7 @@ let app
 function defineMiddlewares() {
 	app = this
 	
-	_setHelment()
+	_setHelmet()
 	_setAssets()
 	_setBodyParser()
 	// _setCookieParser()
@@ -26,8 +26,8 @@ function defineMiddlewares() {
 	return this
 }
 
-const _setHelment = () => {
-	app.use(helmet())
+const _setHelmet = () => {
+	//app.use(helmet())
 }
 
 function _setAssets(){
