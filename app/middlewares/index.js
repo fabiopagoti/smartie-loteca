@@ -3,9 +3,10 @@
 **************************/
 
 const express = require('express')
+const helmet = require('helmet')
 const bodyParser = require('body-parser')
 const passport = require('passport')
-// const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser')
 const expressSession = require('express-session')
 
 // const apiTermos = require('../termos').controller
@@ -16,7 +17,7 @@ let app
 function defineMiddlewares() {
 	app = this
 	
-	// _setSecurity()
+	_setHelment()
 	_setAssets()
 	_setBodyParser()
 	// _setCookieParser()
@@ -25,8 +26,8 @@ function defineMiddlewares() {
 	return this
 }
 
-const _setSecurity = () => {
-	
+const _setHelment = () => {
+	app.use(helmet())
 }
 
 function _setAssets(){

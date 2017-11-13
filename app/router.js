@@ -1,19 +1,15 @@
 /*************************
 *	Rotas da Aplicacao
 **************************/
-const controllerHome = require('../home')
-const controllerAjuda = require('../ajuda')
-const controllerQuemSomos = require('../quem_somos')
-const controllerLogin = require('../login')
-const controllerCadastro = require('../cadastro')
-const controllerSobre = require('../sobre')
+const routerHome = require('../home')
+const routerAjuda = require('../ajuda')
+const routerQuemSomos = require('../quem_somos')
+const routerLogin = require('../login')
+const routerCadastro = require('../cadastro')
+const routerSobre = require('../sobre')
 
-const controllerMeusJogos = require('../meus_jogos')
-
-// const controllerLoterias = require('../loterias').controller
-// const controllerTermos = require('../termos').controller
-// const controllerAgenda = require('../agenda').controller
-// const controllerTermometro = require('../termometro').controller
+const routerDashboard = require('../dashboard')
+const routerMeusJogos = require('../meus_jogos')
 
 let app
 
@@ -21,22 +17,22 @@ function defineRouter(){
 	app = this
 
 	// Rotas Anonimas
-	app.use('/', controllerHome)
-	app.use('/login', controllerLogin)
-	app.use('/cadastro', controllerCadastro)
+	app.use('/', routerHome)
+	app.use('/login', routerLogin)
+	app.use('/cadastro', routerCadastro)
 	
 	// Rotas Comuns
-	app.use('/sobre', controllerSobre)
-	app.use('/ajuda', controllerAjuda)
-	app.use('/quem-somos', controllerQuemSomos)
+	app.use('/sobre', routerSobre)
+	app.use('/ajuda', routerAjuda)
+	app.use('/quem-somos', routerQuemSomos)
 
 	// Rotas autentidas
-	app.use('/meusJogos', controllerMeusJogos)
-
-	// app.use('/loterias', controllerLoterias)
-	// app.use('/glossario', controllerTermos)
-	// app.use('/agenda', controllerAgenda)
-	// app.use('/termometro', controllerTermometro)
+	app.use('/meusJogos', routerMeusJogos)
+	app.use('/dashboard', routerDashboard)
+	// app.use('/loterias', routerLoterias)
+	// app.use('/glossario', routerTermos)
+	// app.use('/agenda', routerAgenda)
+	// app.use('/termometro', routerTermometro)
 	// app.use('/api/termos', apiTermos)
 	// app.use('/api/lotofacil', apiLotofacil)
 

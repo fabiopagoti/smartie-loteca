@@ -1,16 +1,14 @@
 const Usuario = require('../usuario/Usuario.js')
 
 const createUser = (oUser) => {
-	// console.log('Criando usuario..')
-	// console.log(oUser)
 	return new Promise((resolve, reject) => {
-		Usuario.create(oUser, function (err, user) {
+		Usuario.create(oUser, function (err, oNewUser) {
 			if (err) {
 				reject({
 					mensage: err
 				})
 			} else {
-				resolve(oUser)
+				resolve(oNewUser)
 			}
 		})
 		

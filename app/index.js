@@ -9,6 +9,8 @@ const configuration = require('./configuration')
 const middlewares = require('./middlewares')
 const router = require('./router')
 
+// other
+const PORT = process.env.PORT || 3000; 
 const app = express()
 
 app.setDBConnection = db
@@ -20,12 +22,13 @@ const createServer = () => {
 
 	// Configuracoes Gerais
 	app
-		.setDBConnection()
-		.setConfiguration()
-		.setMiddlewares()
-		.setRouter()
+	.setDBConnection()
+	.setConfiguration()
+	.setMiddlewares()
+	.setRouter()
 
-	let server = app.listen(3000, function(err) {
+	app.set('port',PORT);
+	let server = app.listen(app.get('port'), function(err) {
 		console.log('Smartie loteca is up and running!')
 	})
 
