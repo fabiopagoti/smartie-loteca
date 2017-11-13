@@ -3,7 +3,7 @@
 <head>
 	
 	<title>
-		{{> title}}
+		{{> tabTitle}}
 	</title>
 
 	<meta charset="utf-8">
@@ -16,7 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="/material-components-web.css">
 	<link rel="stylesheet" type="text/css" href="/css/theme.css">
 
-	{{#> head }}
+	{{#> head }}		
 	{{/head}}
 
 
@@ -31,6 +31,11 @@
 		{{> upperMenu }}
 
 		<main class="mdc-toolbar-fixed-adjust">
+
+			{{#> pageTitle}}
+				
+			{{/pageTitle}}
+
 			{{{body}}}
 		</main>
 
@@ -39,6 +44,7 @@
 	<!-- Scripts -->
 	<section>
 		<script src="material-components-web.js"></script>
+		
 		{{#> scripts }}
 
 		{{/scripts}}

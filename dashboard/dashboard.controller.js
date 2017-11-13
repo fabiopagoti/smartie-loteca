@@ -8,6 +8,7 @@ const getData = (sUserId) => {
 			reject({
 				mensagem: 'Usuario não autenticado'
 			})
+			return
 		}
 
 		Usuario.findById(sUserId, function(err, oUser){
@@ -15,10 +16,12 @@ const getData = (sUserId) => {
 				reject({
 					mensagem: err
 				})
+				return
 			} else {
 				resolve({
 					user: oUser
 				})
+				return
 			}
 		})
 		

@@ -1,10 +1,5 @@
 <section>
 	
-	<!-- Titulo -->
-	<section class="page-title">
-		<p class="mdc-typography--title">Entrar na Conta</p>
-	</section>
-
 	<!-- Social Buttons -->
 	<section>
 		<div class="mdc-layout-grid">
@@ -52,9 +47,12 @@
 
 						<div class="mdc-form-field">
 							<div class="mdc-textfield mdc-textfield--upgraded">
-								<input type="text" name="email" class="mdc-textfield__input" id="email" aria-controls="email">
+								<input type="text" name="email" class="mdc-textfield__input" id="email"  aria-controls="email"
+								{{#if email}}value="{{email}}" {{/if}}
+								>
 								<label for="email" class="mdc-textfield__label">E-mail</label>
-								<div class="mdc-textfield__bottom-line" style="transform-origin: 121px center"></div>
+								<div class="mdc-textfield__bottom-line" style="transform-origin: 121px center">
+								</div>
 							</div>
 						</div>
 

@@ -4,8 +4,8 @@ const controller = require('./home.controller.js')
 
 
 router.get('/', (request, response) => {
-	console.log('GET HOME')
-	console.log(request.session)
+	console.log('HOME')
+	console.log(request.session.userId)
 	
 	if(request.session.userId){
 		response.redirect('/dashboard')

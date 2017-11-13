@@ -4,7 +4,7 @@ const controller = require('./meus_jogos.controller.js')
 
 router.get('/', (request, response) => {
 	response.render('../meus_jogos/meus_jogos', {
-		logado: true,
+		anonimo: request.session.userId ? false : true,
 		meusJogos: true
 	})
 })

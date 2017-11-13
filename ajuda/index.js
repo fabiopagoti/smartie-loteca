@@ -4,8 +4,9 @@ const router = express.Router()
 
 router.get('/', (request, response) => {
 	response.render('../ajuda/ajuda', {
-		anonimo: true,
-		ajuda: true
+		titulo: 'Ajuda',
+		anonimo: request.session.userId ? false : true,
+		ajuda: true,
 	})
 })
 

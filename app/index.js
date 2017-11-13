@@ -29,7 +29,7 @@ const createServer = () => {
 
 	app.set('port',PORT);
 	let server = app.listen(app.get('port'), function(err) {
-		console.log('Smartie loteca is up and running!')
+		console.log(`Smartie loteca is up and running on port ${app.get('port')} !`)
 	})
 
 	return server

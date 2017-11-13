@@ -5,17 +5,6 @@
 			<div class="mdc-permanent-drawer__toolbar-spacer">
 			</div>
 
-				<!-- 
-					Cabecalho do menu lateral
-					Usar quando usuario estiver logado 
-				-->
-
-				<!-- <header class="mdc-temporary-drawer__header">
-					<div class="mdc-temporary-drawer__header-content">
-						Header here
-					</div>
-				</header> -->
-
 				{{#if anonimo}}
 				<nav class="mdc-temporary-drawer__content mdc-list">
 
@@ -34,15 +23,21 @@
 						<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">people</i>Quem Somos
 					</a>
 				</nav>
-				{{/if}}
+				
+				{{else}}
 
-				{{#if logado}}
+				<!-- 
+					Cabecalho do menu lateral
+					Usar quando usuario estiver logado 
+				-->
 
+				<header class="mdc-temporary-drawer__header">
+					<div class="mdc-temporary-drawer__header-content">
+						{{nome}}
+					</div>
+				</header>
 				<nav class="mdc-temporary-drawer__content mdc-list">
 
-					<a class="mdc-list-item {{#if login}}mdc-temporary-drawer--selected{{/if}}" href="/login">
-						<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">account_circle</i>Login
-					</a>
 					<a class="mdc-list-item {{#if perfil}}mdc-temporary-drawer--selected{{/if}}" href="/perfil">
 						<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">account_circle</i>Perfil
 					</a>
@@ -69,6 +64,9 @@
 					</a>
 					<a class="mdc-list-item {{#if quemSomos}}mdc-temporary-drawer--selected{{/if}}" href="/quem-somos">
 						<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">people</i>Quem Somos
+					</a>
+					<a class="mdc-list-item {{#if login}}mdc-temporary-drawer--selected{{/if}}" href="/login">
+						<i class="material-icons mdc-list-item__start-detail" aria-hidden="true">exit_to_app</i>Sair
 					</a>
 				</nav>
 

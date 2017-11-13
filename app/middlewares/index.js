@@ -20,14 +20,14 @@ function defineMiddlewares() {
 	_setHelmet()
 	_setAssets()
 	_setBodyParser()
-	// _setCookieParser()
+	_setCookieParser()
 	_setExpressSession()
 
 	return this
 }
 
 const _setHelmet = () => {
-	//app.use(helmet())
+	app.use(helmet())
 }
 
 function _setAssets(){
